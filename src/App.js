@@ -8,6 +8,7 @@ import {
 } from "./store/selectors";
 import Word from "./components/Word";
 import { isBackspace, isEnter, isLetter } from "./utils/keys";
+import { WORD_COUNT } from "./utils/constants";
 import "./App.css";
 
 function App() {
@@ -41,19 +42,28 @@ function App() {
 
   return (
     <div className="App">
-      {[...Array(5)].map((n, index) => {
+      {[...Array(WORD_COUNT)].map((n, index) => {
+        const isActive = index === activeIndex;
+        const isGuessed = index < activeIndex;
         const displayWord = () => {
-          if (index === activeIndex && currentWord) {
+          if (isActive && currentWord) {
             return currentWord;
           }
 
-          if (index < activeIndex) {
+          if (isGuessed) {
             return guesses[index];
           }
 
           return "";
         };
-        return <Word key={index} word={displayWord()} />;
+        return (
+          <Word
+            key={index}
+            word={displayWord()}
+            isActive={isActive}
+            isGuessed={isGuessed}
+          />
+        );
       })}
     </div>
   );
