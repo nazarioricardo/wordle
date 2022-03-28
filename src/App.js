@@ -1,14 +1,21 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { addLetter, removeLetter } from "./store/wordSlice";
-import logo from "./logo.svg";
-import { Counter } from "./features/counter/Counter";
-import "./App.css";
+import { useDispatch, useSelector } from "react-redux";
+import { addLetter, removeLetter, enterWord } from "./store/wordSlice";
+import {
+  selectCurrentWord,
+  selectActiveIndex,
+  selectGuesses,
+} from "./store/selectors";
 import Word from "./components/Word";
-import { isBackspace, isLetter } from "./utils";
+import { isBackspace, isEnter, isLetter } from "./utils/keys";
+import "./App.css";
 
 function App() {
+  const activeIndex = useSelector(selectActiveIndex);
+  const currentWord = useSelector(selectCurrentWord);
+  const guesses = useSelector(selectGuesses);
   const dispatch = useDispatch();
+
   const onKeyPressed = (event) => {
     const { key } = event;
     if (isLetter(key)) {
@@ -17,6 +24,10 @@ function App() {
 
     if (isBackspace(key)) {
       dispatch(removeLetter());
+    }
+
+    if (isEnter(key)) {
+      dispatch(enterWord());
     }
   };
 
@@ -30,9 +41,20 @@ function App() {
 
   return (
     <div className="App">
-      {[...Array(5)].map((n, index) => (
-        <Word key={index} />
-      ))}
+      {[...Array(5)].map((n, index) => {
+        const displayWord = () => {
+          if (index === activeIndex && currentWord) {
+            return currentWord;
+          }
+
+          if (index < activeIndex) {
+            return guesses[index];
+          }
+
+          return "";
+        };
+        return <Word key={index} word={displayWord()} />;
+      })}
     </div>
   );
 }

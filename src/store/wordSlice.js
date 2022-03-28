@@ -4,8 +4,8 @@ const WORD = "depot";
 const initialState = {
   targetWord: WORD,
   currentWord: [],
-  wordIndex: 0,
-  letterIndex: 0,
+  guesses: [],
+  activeIndex: 0,
 };
 
 export const wordSlice = createSlice({
@@ -21,9 +21,17 @@ export const wordSlice = createSlice({
     removeLetter: (state) => {
       state.currentWord.pop();
     },
+
+    enterWord: (state) => {
+      if (state.currentWord.length === 5) {
+        state.guesses.push(state.currentWord);
+        state.currentWord = [];
+        state.activeIndex++;
+      }
+    },
   },
 });
 
-export const { addLetter, removeLetter } = wordSlice.actions;
+export const { addLetter, removeLetter, enterWord } = wordSlice.actions;
 
 export default wordSlice.reducer;
