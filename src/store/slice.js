@@ -1,15 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { WORD_COUNT, WORD_LENGTH } from "../utils/constants";
+import { WORD_LENGTH } from "../utils/constants";
 const WORD = "depot";
 
 const initialState = {
-  targetWord: WORD,
-  currentWord: [],
+  target: WORD,
+  current: [],
   guesses: [],
-  activeIndex: 0,
+  index: 0,
 };
 
-export const wordSlice = createSlice({
+export const slice = createSlice({
   name: "word",
   initialState,
   reducers: {
@@ -27,12 +27,12 @@ export const wordSlice = createSlice({
       if (state.currentWord.length === WORD_LENGTH) {
         state.guesses.push(state.currentWord);
         state.currentWord = [];
-        state.activeIndex++;
+        state.index++;
       }
     },
   },
 });
 
-export const { addLetter, removeLetter, enterWord } = wordSlice.actions;
+export const { addLetter, removeLetter, enterWord } = slice.actions;
 
-export default wordSlice.reducer;
+export default slice.reducer;

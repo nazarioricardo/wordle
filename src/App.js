@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addLetter, removeLetter, enterWord } from "./store/wordSlice";
+import { addLetter, removeLetter, enterWord } from "./store/slice";
 import {
   selectCurrentWord,
   selectActiveIndex,

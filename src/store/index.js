@@ -1,8 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import wordReducer from "./wordSlice";
+import reducer from "./slice";
 
 export const store = configureStore({
-  reducer: {
-    word: wordReducer,
-  },
+  reducer,
 });
+
+// export const store = configureStore({
+//   reducer: {
+//     word: wordReducer,
+//   },
+// });
