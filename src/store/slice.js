@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { WORD_LENGTH } from "../utils/constants";
-const WORD = "depot";
+const WORD = ["d", "e", "p", "o", "t"];
 
 const initialState = {
   target: WORD,
@@ -14,19 +14,19 @@ export const slice = createSlice({
   initialState,
   reducers: {
     addLetter: (state, action) => {
-      if (state.currentWord.length < WORD_LENGTH) {
-        state.currentWord.push(action.payload);
+      if (state.current.length < WORD_LENGTH) {
+        state.current.push(action.payload);
       }
     },
 
     removeLetter: (state) => {
-      state.currentWord.pop();
+      state.current.pop();
     },
 
     enterWord: (state) => {
       if (state.currentWord.length === WORD_LENGTH) {
         state.guesses.push(state.currentWord);
-        state.currentWord = [];
+        state.current = [];
         state.index++;
       }
     },

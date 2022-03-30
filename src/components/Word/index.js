@@ -1,14 +1,19 @@
 import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import LetterBlock from "../LetterBlock";
 import Div from "./styles";
 import { WORD_LENGTH } from "../../utils/constants";
+import { selectCurrentWord, selectTargetWord } from "../../store/selectors";
 
 const Word = ({ word, isGuessed }) => {
+  const currentWord = useSelector(selectCurrentWord);
+  const targetWord = useSelector(selectTargetWord);
   useEffect(() => {
-    console.log(word, isGuessed);
     if (isGuessed) {
-      // Compare word
       // Animate Squares
+      // Disable keyboard while animating
+      // Compare each letter
+      // When done, check if won, or lost
     }
   }, [isGuessed]);
 
