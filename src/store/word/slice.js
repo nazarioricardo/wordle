@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { WORD_LENGTH } from "../utils/constants";
-import { getWordResults } from "../utils/getWordResults";
+import { WORD_LENGTH } from "../../utils/constants";
+import { getWordResults } from "../../utils/getWordResults";
 const WORD = ["d", "e", "p", "o", "t"];
 
 const initialState = {

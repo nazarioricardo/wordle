@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addLetter, removeLetter, enterWord } from "./store/slice";
+import { addLetter, removeLetter, enterWord } from "./store/word/slice";
 import {
   selectCurrentWord,
   selectActiveIndex,
   selectGuesses,
   selectResults,
-} from "./store/selectors";
+} from "./store/word/selectors";
 import WordGrid from "./components/WordGrid";
 import { isBackspace, isEnter, isLetter } from "./utils/keys";
 import { WORD_COUNT } from "./utils/constants";

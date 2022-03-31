@@ -1,10 +1,15 @@
 import React from "react";
 import LetterBlock from "../LetterBlock";
 import { useDispatch } from "react-redux";
-import { unlockKeyboard } from "../../store/slice";
-
+import { unlockKeyboard } from "../../store/word/slice";
+import { setGameStatus } from "../../store/game/slice";
 import { Div } from "./styles";
-import { WORD_LENGTH, WORD_COUNT, LetterStatus } from "../../utils/constants";
+import {
+  WORD_LENGTH,
+  WORD_COUNT,
+  LetterStatus,
+  GameStatus,
+} from "../../utils/constants";
 
 const Word = ({ word, index, isGuessed, result }) => {
   const dispatch = useDispatch();
@@ -14,12 +19,12 @@ const Word = ({ word, index, isGuessed, result }) => {
       const isCorrect = result.every((r) => r === LetterStatus.CORRECT);
 
       if (isCorrect) {
-        console.log("YOU WON");
+        dispatch(setGameStatus(GameStatus.WON));
         return;
       }
 
       if (index === WORD_COUNT - 1 && !isCorrect) {
-        console.log("You lost...");
+        dispatch(setGameStatus(GameStatus.LOST));
         return;
       }
 
