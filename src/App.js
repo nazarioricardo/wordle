@@ -5,8 +5,9 @@ import {
   selectCurrentWord,
   selectActiveIndex,
   selectGuesses,
+  selectResults,
 } from "./store/selectors";
-import Word from "./components/Word";
+import WordGrid from "./components/WordGrid";
 import { isBackspace, isEnter, isLetter } from "./utils/keys";
 import { WORD_COUNT } from "./utils/constants";
 import "./App.css";
@@ -14,6 +15,7 @@ import "./App.css";
 function App() {
   const activeIndex = useSelector(selectActiveIndex);
   const currentWord = useSelector(selectCurrentWord);
+  const results = useSelector(selectResults);
   const guesses = useSelector(selectGuesses);
   const dispatch = useDispatch();
 
@@ -42,29 +44,13 @@ function App() {
 
   return (
     <div className="App">
-      {[...Array(WORD_COUNT)].map((n, index) => {
-        const isActive = index === activeIndex;
-        const isGuessed = index < activeIndex;
-        const displayWord = () => {
-          if (isActive && currentWord) {
-            return currentWord;
-          }
-
-          if (isGuessed) {
-            return guesses[index];
-          }
-
-          return "";
-        };
-        return (
-          <Word
-            key={index}
-            word={displayWord()}
-            isActive={isActive}
-            isGuessed={isGuessed}
-          />
-        );
-      })}
+      <WordGrid
+        count={WORD_COUNT}
+        activeIndex={activeIndex}
+        currentWord={currentWord}
+        results={results}
+        guesses={guesses}
+      />
     </div>
   );
 }

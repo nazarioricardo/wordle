@@ -1,26 +1,43 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
 import LetterBlock from "../LetterBlock";
-import Div from "./styles";
-import { WORD_LENGTH } from "../../utils/constants";
-import { selectCurrentWord, selectTargetWord } from "../../store/selectors";
+import { useDispatch } from "react-redux";
+import { unlockKeyboard } from "../../store/slice";
 
-const Word = ({ word, isGuessed }) => {
-  const currentWord = useSelector(selectCurrentWord);
-  const targetWord = useSelector(selectTargetWord);
-  useEffect(() => {
-    if (isGuessed) {
-      // Animate Squares
-      // Disable keyboard while animating
-      // Compare each letter
-      // When done, check if won, or lost
+import { Div } from "./styles";
+import { WORD_LENGTH, WORD_COUNT, LetterStatus } from "../../utils/constants";
+
+const Word = ({ word, index, isGuessed, result }) => {
+  const dispatch = useDispatch();
+
+  const onFlip = (letterIndex) => {
+    if (letterIndex === WORD_LENGTH - 1) {
+      const isCorrect = result.every((r) => r === LetterStatus.CORRECT);
+
+      if (isCorrect) {
+        console.log("YOU WON");
+        return;
+      }
+
+      if (index === WORD_COUNT - 1 && !isCorrect) {
+        console.log("You lost...");
+        return;
+      }
+
+      dispatch(unlockKeyboard());
     }
-  }, [isGuessed]);
+  };
 
   return (
     <Div>
       {[...Array(WORD_LENGTH)].map((n, index) => (
-        <LetterBlock key={index} letter={word && word[index]} />
+        <LetterBlock
+          key={index}
+          index={index}
+          letter={word && word[index]}
+          result={result && result[index]}
+          isGuessed={isGuessed}
+          onFlip={index === WORD_COUNT - 1 ? onFlip : null}
+        />
       ))}
     </Div>
   );
