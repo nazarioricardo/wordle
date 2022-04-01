@@ -1,9 +1,9 @@
 import React from "react";
 import Word from "../Word";
-
+import { Div } from "./styles";
 const WordGrid = ({ count, activeIndex, currentWord, guesses, results }) => {
   return (
-    <div>
+    <Div>
       {[...Array(count)].map((n, index) => {
         const isActive = index === activeIndex;
         const isGuessed = index < activeIndex;
@@ -29,7 +29,7 @@ const WordGrid = ({ count, activeIndex, currentWord, guesses, results }) => {
           />
         );
       })}
-    </div>
+    </Div>
   );
 };
 

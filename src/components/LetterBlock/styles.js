@@ -14,10 +14,10 @@ const flipStyle = css`
 `;
 
 export const Div = styled.div`
-  border: 10px solid black;
+  margin: 2px;
+  border-radius: 5px;
   height: 100px;
   width: 100px;
-  margin: 10px;
   font-size: 48px;
   background-color: transparent;
   display: flex;
@@ -35,10 +35,10 @@ export const Div = styled.div`
         case LetterStatus.ABSENT:
           return "gray";
         default:
-          return "transparent";
+          return "#ECE9C0";
       }
     }
 
-    return "transparent";
+    return "#ECE9C0";
   }};
 `;
