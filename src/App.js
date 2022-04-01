@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addLetter, removeLetter, enterWord } from "./store/word/slice";
 import {
@@ -7,9 +7,10 @@ import {
   selectGuesses,
   selectResults,
 } from "./store/word/selectors";
+import { selectGameStatus } from "./store/game/selectors";
 import WordGrid from "./components/WordGrid";
 import { isBackspace, isEnter, isLetter } from "./utils/keys";
-import { WORD_COUNT } from "./utils/constants";
+import { GameStatus, WORD_COUNT } from "./utils/constants";
 import "./App.css";
 
 function App() {
@@ -17,22 +18,30 @@ function App() {
   const currentWord = useSelector(selectCurrentWord);
   const results = useSelector(selectResults);
   const guesses = useSelector(selectGuesses);
+  const gameStatus = useSelector(selectGameStatus);
   const dispatch = useDispatch();
 
-  const onKeyPressed = (event) => {
-    const { key } = event;
-    if (isLetter(key)) {
-      dispatch(addLetter(key));
-    }
+  const onKeyPressed = useCallback(
+    (event) => {
+      if (gameStatus !== GameStatus.PLAYING) {
+        return;
+      }
 
-    if (isBackspace(key)) {
-      dispatch(removeLetter());
-    }
+      const { key } = event;
+      if (isLetter(key)) {
+        dispatch(addLetter(key));
+      }
 
-    if (isEnter(key)) {
-      dispatch(enterWord());
-    }
-  };
+      if (isBackspace(key)) {
+        dispatch(removeLetter());
+      }
+
+      if (isEnter(key)) {
+        dispatch(enterWord());
+      }
+    },
+    [dispatch, gameStatus]
+  );
 
   useEffect(() => {
     document.addEventListener("keydown", onKeyPressed);
@@ -40,7 +49,7 @@ function App() {
     return () => {
       document.removeEventListener("keydown", onKeyPressed);
     };
-  }, []);
+  }, [onKeyPressed]);
 
   return (
     <div className="App">

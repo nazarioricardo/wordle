@@ -12,7 +12,7 @@ const LetterBlock = ({ index, letter, isGuessed, result, onFlip }) => {
         onFlip(index, result);
       }
     }, index * 200);
-  }, [index, onFlip]);
+  }, [index, onFlip, result]);
 
   useEffect(() => {
     if (isGuessed) {

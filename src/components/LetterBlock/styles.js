@@ -7,15 +7,7 @@ const pulseStyle = css`
   animation: ${pulseKeyframe} 0.3s linear;
 `;
 
-const flipKeyframe = keyframes`
-  from {
-    transform: scaleY(0);
-  };
-
-  to {
-    transform: scaleY(1);
-  }
-`;
+const flipKeyframe = keyframes`${flipInX}`;
 
 const flipStyle = css`
   animation: ${flipKeyframe} 0.3s ease-in-out;
