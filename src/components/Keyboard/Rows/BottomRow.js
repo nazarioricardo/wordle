@@ -1,14 +1,17 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import ActionKey from "../Keys/ActionKey";
 import LetterKey from "../Keys/LetterKey";
+import { enterWord, removeLetter } from "../../../store/word/slice";
 
 const BottomRow = () => {
+  const dispatch = useDispatch();
   const onClickEnter = () => {
-    console.log("Enter");
+    dispatch(enterWord());
   };
 
   const onClickBackspace = () => {
-    console.log("Backspace");
+    dispatch(removeLetter());
   };
 
   return (

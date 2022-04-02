@@ -61,6 +61,7 @@ function App() {
         results={results}
         guesses={guesses}
       />
+      {/* </div> */}
       <Keyboard />
     </div>
   );

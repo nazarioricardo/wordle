@@ -6,3 +6,10 @@
   align-items: center;
   height: 100vh;
 }
+
+.word-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+}
