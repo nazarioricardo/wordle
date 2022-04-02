@@ -9,6 +9,7 @@ import {
 } from "./store/word/selectors";
 import { selectGameStatus } from "./store/game/selectors";
 import WordGrid from "./components/WordGrid";
+import Keyboard from "./components/Keyboard";
 import { isBackspace, isEnter, isLetter } from "./utils/keys";
 import { GameStatus, WORD_COUNT } from "./utils/constants";
 import "./App.css";
@@ -60,6 +61,7 @@ function App() {
         results={results}
         guesses={guesses}
       />
+      <Keyboard />
     </div>
   );
 }

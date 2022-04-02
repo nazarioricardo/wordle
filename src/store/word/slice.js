@@ -18,12 +18,11 @@ export const slice = createSlice({
   reducers: {
     addLetter: (state, action) => {
       if (state.keyboardIsLocked) {
-        console.log(state.keyboardIsLocked);
         return;
       }
 
       if (state.current.length < WORD_LENGTH) {
-        state.current.push(action.payload);
+        state.current.push(action.payload.toLowerCase());
       }
     },
 

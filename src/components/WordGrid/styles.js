@@ -5,5 +5,4 @@ export const Div = styled.div`
   flex-direction: column;
   justify-content: "center";
   align-items: "center";
-  width: 100%;
 `;

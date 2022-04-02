@@ -1,4 +1,4 @@
-export const WORD_COUNT = 5;
+export const WORD_COUNT = 6;
 export const WORD_LENGTH = 5;
 
 export const LetterStatus = {

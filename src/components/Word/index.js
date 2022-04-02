@@ -34,14 +34,14 @@ const Word = ({ word, index, isGuessed, result }) => {
 
   return (
     <Div>
-      {[...Array(WORD_LENGTH)].map((n, index) => (
+      {[...Array(WORD_LENGTH)].map((n, letterIndex) => (
         <LetterBlock
-          key={index}
-          index={index}
-          letter={word && word[index]}
-          result={result && result[index]}
+          key={letterIndex}
+          index={letterIndex}
+          letter={word && word[letterIndex]}
+          result={result && result[letterIndex]}
           isGuessed={isGuessed}
-          onFlip={index === WORD_COUNT - 1 ? onFlip : null}
+          onFlip={onFlip}
         />
       ))}
     </Div>

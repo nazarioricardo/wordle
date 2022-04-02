@@ -16,8 +16,8 @@ const flipStyle = css`
 export const Div = styled.div`
   margin: 2px;
   border-radius: 5px;
-  height: 100px;
-  width: 100px;
+  height: 62px;
+  width: 62px;
   font-size: 48px;
   background-color: transparent;
   display: flex;
