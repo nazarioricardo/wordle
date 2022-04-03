@@ -3,5 +3,6 @@ import { CSS } from "../styles";
 
 export const Button = styled.button`
   ${CSS}
-  width: 40px;
+  max-width: 40px;
+  min-width: 32px;
 `;

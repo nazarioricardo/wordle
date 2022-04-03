@@ -13,6 +13,7 @@ import Keyboard from "./components/Keyboard";
 import { isBackspace, isEnter, isLetter } from "./utils/keys";
 import { GameStatus, WORD_COUNT } from "./utils/constants";
 import "./App.css";
+import Header from "./components/Header";
 
 function App() {
   const activeIndex = useSelector(selectActiveIndex);
@@ -54,6 +55,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       <WordGrid
         count={WORD_COUNT}
         activeIndex={activeIndex}
@@ -61,7 +63,6 @@ function App() {
         results={results}
         guesses={guesses}
       />
-      {/* </div> */}
       <Keyboard />
     </div>
   );

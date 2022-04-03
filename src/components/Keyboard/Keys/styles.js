@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
 export const CSS = css`
-  height: 60px;
-  margin: 3px;
+  height: 58px;
+  cursor: pointer;
 `;

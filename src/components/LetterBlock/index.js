@@ -22,7 +22,7 @@ const LetterBlock = ({ index, letter, isGuessed, result, onFlip }) => {
 
   return (
     <Div shouldPulse={shouldPulse} shouldFlip={shouldFlip} result={result}>
-      {letter && letter.toUpperCase()}
+      {letter}
     </Div>
   );
 };

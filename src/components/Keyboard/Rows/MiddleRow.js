@@ -1,5 +1,6 @@
 import React from "react";
 import LetterKey from "../Keys/LetterKey";
+
 const MiddleRow = () => {
   return (
     <div>

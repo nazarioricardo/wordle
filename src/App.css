@@ -1,15 +1,13 @@
 .App {
   text-align: center;
+  background-color: orange;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 100vh;
 }
 
-.word-container {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: flex-end;
+.game {
+  max-width: 500px;
 }
