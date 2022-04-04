@@ -1,6 +1,6 @@
-import styled, { css } from "styled-components";
+import { css } from "styled-components";
 
-export const CSS = css`
+export const Key = css`
   height: 58px;
   cursor: pointer;
 `;

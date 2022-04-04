@@ -1,20 +1,39 @@
 import React from "react";
 import LetterKey from "../Keys/LetterKey";
+import { LetterContainer } from "./styles";
 
-const MiddleRow = () => {
+const Middlediv = () => {
   return (
     <div>
-      <LetterKey letter={"A"} />
-      <LetterKey letter={"S"} />
-      <LetterKey letter={"D"} />
-      <LetterKey letter={"F"} />
-      <LetterKey letter={"G"} />
-      <LetterKey letter={"H"} />
-      <LetterKey letter={"J"} />
-      <LetterKey letter={"K"} />
-      <LetterKey letter={"L"} />
+      <LetterContainer>
+        <LetterKey letter={"A"} />
+      </LetterContainer>
+      <LetterContainer>
+        <LetterKey letter={"S"} />
+      </LetterContainer>
+      <LetterContainer>
+        <LetterKey letter={"D"} />
+      </LetterContainer>
+      <LetterContainer>
+        <LetterKey letter={"F"} />
+      </LetterContainer>
+      <LetterContainer>
+        <LetterKey letter={"G"} />
+      </LetterContainer>
+      <LetterContainer>
+        <LetterKey letter={"H"} />
+      </LetterContainer>
+      <LetterContainer>
+        <LetterKey letter={"J"} />
+      </LetterContainer>
+      <LetterContainer>
+        <LetterKey letter={"K"} />
+      </LetterContainer>
+      <LetterContainer>
+        <LetterKey letter={"L"} />
+      </LetterContainer>
     </div>
   );
 };
 
-export default MiddleRow;
+export default Middlediv;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { CSS } from "../styles";
+import { Key } from "../styles";
 
 export const Button = styled.button`
-  ${CSS}
-  width: 60px;
+  ${Key}
+  width: 100%;
 `;
