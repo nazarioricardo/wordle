@@ -1,6 +1,6 @@
 import styled, { keyframes, css } from "styled-components";
 import { pulse, flipInX } from "react-animations";
-import { LetterStatus } from "../../utils/constants";
+import { Colors, LetterStatus } from "../../utils/constants";
 const pulseKeyframe = keyframes`${pulse}`;
 
 const pulseStyle = css`
@@ -14,7 +14,7 @@ const flipStyle = css`
 `;
 
 export const Div = styled.div`
-  /* border: 1px sogglid black; */
+  border-radius: 5px;
   width: 100%;
   line-height: 2rem;
   font-size: 2rem;
@@ -33,16 +33,16 @@ export const Div = styled.div`
     if (props.shouldFlip) {
       switch (props.result) {
         case LetterStatus.CORRECT:
-          return "green";
+          return Colors.correct;
         case LetterStatus.PRESENT:
-          return "yellow";
+          return Colors.present;
         case LetterStatus.ABSENT:
-          return "gray";
+          return Colors.absent;
         default:
-          return "#ECE9C0";
+          return Colors.cream;
       }
     }
 
-    return "#ECE9C0";
+    return Colors.cream;
   }};
 `;

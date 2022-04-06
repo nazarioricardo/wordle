@@ -13,3 +13,14 @@ export const GameStatus = {
   WON: "won",
   LOST: "lost",
 };
+
+export const Colors = {
+  green: "#1b2b2f",
+  pink: "#e395b4",
+  cream: "#ECE9C0",
+  offWhite: "#f6f5ef",
+
+  correct: "#CAECC1",
+  present: "#E8CEBD",
+  absent: "#E6E4DE",
+};

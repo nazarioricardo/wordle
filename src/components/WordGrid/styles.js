@@ -4,7 +4,6 @@ export const Div = styled.div`
   display: grid;
   grid-template-rows: repeat(6, 1fr);
   grid-gap: 5px;
-  background-color: blue;
   padding: 10px;
   height: 100%;
   width: 100%;

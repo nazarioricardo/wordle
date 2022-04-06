@@ -12,7 +12,7 @@ export const LetterContainer = styled.div`
 export const ActionContainer = styled.div`
   display: inline-flex;
   margin-right: 5px;
-  width: 16%;
+  width: 12%;
   &:last-child {
     margin-right: 0px;
   }
