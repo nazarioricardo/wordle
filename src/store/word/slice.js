@@ -79,6 +79,7 @@ export const slice = createSlice({
               if (result === LetterStatus.CORRECT) {
                 state.alphabet[char] = result;
               }
+              return;
           }
 
           state.alphabet[char] = results[index];
