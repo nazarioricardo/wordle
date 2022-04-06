@@ -6,31 +6,31 @@ const Middlediv = () => {
   return (
     <div>
       <LetterContainer>
-        <LetterKey letter={"A"} />
+        <LetterKey letter={"a"} />
       </LetterContainer>
       <LetterContainer>
-        <LetterKey letter={"S"} />
+        <LetterKey letter={"s"} />
       </LetterContainer>
       <LetterContainer>
-        <LetterKey letter={"D"} />
+        <LetterKey letter={"d"} />
       </LetterContainer>
       <LetterContainer>
-        <LetterKey letter={"F"} />
+        <LetterKey letter={"f"} />
       </LetterContainer>
       <LetterContainer>
-        <LetterKey letter={"G"} />
+        <LetterKey letter={"g"} />
       </LetterContainer>
       <LetterContainer>
-        <LetterKey letter={"H"} />
+        <LetterKey letter={"h"} />
       </LetterContainer>
       <LetterContainer>
-        <LetterKey letter={"J"} />
+        <LetterKey letter={"j"} />
       </LetterContainer>
       <LetterContainer>
-        <LetterKey letter={"K"} />
+        <LetterKey letter={"k"} />
       </LetterContainer>
       <LetterContainer>
-        <LetterKey letter={"L"} />
+        <LetterKey letter={"l"} />
       </LetterContainer>
     </div>
   );

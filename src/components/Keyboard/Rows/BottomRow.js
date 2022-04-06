@@ -21,25 +21,25 @@ const Bottomdiv = () => {
         <ActionKey onClick={onClickEnter}>Enter</ActionKey>
       </ActionContainer>
       <LetterContainer>
-        <LetterKey letter={"Z"} />
+        <LetterKey letter={"z"} />
       </LetterContainer>
       <LetterContainer>
-        <LetterKey letter={"X"} />
+        <LetterKey letter={"x"} />
       </LetterContainer>
       <LetterContainer>
-        <LetterKey letter={"C"} />
+        <LetterKey letter={"c"} />
       </LetterContainer>
       <LetterContainer>
-        <LetterKey letter={"V"} />
+        <LetterKey letter={"v"} />
       </LetterContainer>
       <LetterContainer>
-        <LetterKey letter={"B"} />
+        <LetterKey letter={"b"} />
       </LetterContainer>
       <LetterContainer>
-        <LetterKey letter={"N"} />
+        <LetterKey letter={"n"} />
       </LetterContainer>
       <LetterContainer>
-        <LetterKey letter={"M"} />
+        <LetterKey letter={"m"} />
       </LetterContainer>
       <ActionContainer>
         <ActionKey onClick={onClickBackspace}>Delete</ActionKey>

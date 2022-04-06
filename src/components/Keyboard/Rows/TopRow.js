@@ -6,34 +6,34 @@ const TopRow = () => {
   return (
     <div>
       <LetterContainer>
-        <LetterKey letter={"Q"} />
+        <LetterKey letter={"q"} />
       </LetterContainer>
       <LetterContainer>
-        <LetterKey letter={"W"} />
+        <LetterKey letter={"w"} />
       </LetterContainer>
       <LetterContainer>
-        <LetterKey letter={"E"} />
+        <LetterKey letter={"e"} />
       </LetterContainer>
       <LetterContainer>
-        <LetterKey letter={"R"} />
+        <LetterKey letter={"r"} />
       </LetterContainer>
       <LetterContainer>
-        <LetterKey letter={"T"} />
+        <LetterKey letter={"t"} />
       </LetterContainer>
       <LetterContainer>
-        <LetterKey letter={"Y"} />
+        <LetterKey letter={"y"} />
       </LetterContainer>
       <LetterContainer>
-        <LetterKey letter={"U"} />
+        <LetterKey letter={"u"} />
       </LetterContainer>
       <LetterContainer>
-        <LetterKey letter={"I"} />
+        <LetterKey letter={"i"} />
       </LetterContainer>
       <LetterContainer>
-        <LetterKey letter={"O"} />
+        <LetterKey letter={"o"} />
       </LetterContainer>
       <LetterContainer>
-        <LetterKey letter={"P"} />
+        <LetterKey letter={"p"} />
       </LetterContainer>
     </div>
   );
